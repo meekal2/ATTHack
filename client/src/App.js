@@ -1,24 +1,21 @@
 import React, { Component } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Route } from "react-router";
+import { withRouter, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import Dashboard from "./Dashboard";
 import Player from "./Player";
+import StreamList from "./StreamList";
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <React.Fragment>
-          <div className="App">
-            <Route path="/" component={HomePage} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/player" component={Player} />
-          </div>
-        </React.Fragment>
-      </BrowserRouter>
+      <React.Fragment>
+        <Route path="/" component={HomePage} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/player" component={Player} />
+        <Route exact path="/stream" component={StreamList} />
+      </React.Fragment>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
