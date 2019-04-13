@@ -1,0 +1,543 @@
+/*================================================================================
+	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+	Version: 1.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+/* ======== APP BODY STYLES ======== */
+.card-title.caseTitle {
+  font-size: 2.5rem !important;
+}
+
+.selectItemsHeader {
+  padding-bottom: 39px;
+}
+
+.tip {
+  color: green;
+}
+
+/* ACTION BUTTON STYLES */
+.actionBtnEdit {
+  color: #6b6f80;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.actionBtnDelete {
+  color: #6b6f80;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.actionBtnDownload {
+  color: #6b6f80;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.actionBtnEdit:hover {
+  color: green;
+}
+
+.actionBtnDelete:hover {
+  color: #f8313c;
+}
+
+.actionBtnDownload:hover {
+  color: #ffc107;
+}
+
+/* Removes blue outline when clicking button */
+.actionBtnEdit:focus,
+.actionBtnEdit:active,
+.actionBtnDelete:focus,
+.actionBtnDelete:active {
+  outline: none !important;
+}
+
+/* ACTIVE USER COLUMN STYLES */
+.activeYes {
+  font-size: 20px;
+  color: green;
+}
+
+.activeNo {
+  font-size: 20px;
+  color: #f8313c;
+}
+
+/* FILE UPLOAD STYLES */
+.fileUploadBtn {
+  cursor: pointer !important;
+}
+.file-input-wrapper {
+  overflow: hidden !important;
+  position: relative !important;
+}
+.file-input-wrapper > input[type="file"] {
+  font-size: 200px !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  opacity: 0 !important;
+}
+.file-input-wrapper > .btn-file-input {
+  display: inline-block !important;
+  width: 200px !important;
+  height: 40px !important;
+}
+
+/* ======== CALENDAR STYLES ======== */
+.rbc-calendar {
+  height: 700px !important;
+  margin-top: 25px !important;
+  margin-left: 25px !important;
+  margin-right: 25px !important;
+}
+
+.caseStatus {
+  background-color: rgb(106, 181, 204) !important;
+  text-align: left !important;
+  padding: 20px !important;
+  margin-left: 25px !important;
+  margin-right: 25px !important;
+  margin-bottom: 25px !important;
+}
+
+#caseStatusList {
+  margin-left: 20px !important;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  font-family: "Comfortaa", cursive, "Times New Roman", Times, serif !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 0.5rem !important;
+  color: #464855 !important;
+  font-size: 1.74rem !important;
+  text-align: right !important;
+}
+.rbc-toolbar button {
+  color: #7c7ad4 !important;
+  border: 1px solid #7c7ad4 !important;
+  height: 42px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+}
+.rbc-month-header {
+  height: 41px !important;
+  line-height: 41px !important;
+}
+.rbc-header {
+  border-bottom: 1px solid #7c7ad4 !important;
+}
+.rbc-header + .rbc-header {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-header + .rbc-header {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-month-view {
+  border: 1px solid #7c7ad4 !important;
+}
+.rbc-month-row + .rbc-month-row {
+  border-top: 1px solid #7c7ad4 !important;
+}
+.rbc-day-bg + .rbc-day-bg {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-day-bg + .rbc-day-bg {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-agenda-view table.rbc-agenda-table {
+  border: 1px solid #7c7ad4 !important;
+}
+.rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-agenda-view table.rbc-agenda-table tbody > tr + tr {
+  border-top: 1px solid #7c7ad4 !important;
+}
+.rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+  border-bottom: 1px solid #7c7ad4 !important;
+}
+.rbc-timeslot-group {
+  border-bottom: 1px solid #7c7ad4 !important;
+}
+.rbc-time-view-resources .rbc-time-gutter,
+.rbc-time-view-resources .rbc-time-header-gutter {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-time-view {
+  border: 1px solid #7c7ad4 !important;
+}
+.rbc-time-view .rbc-allday-cell + .rbc-allday-cell {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-time-header.rbc-overflowing {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-time-header.rbc-overflowing {
+  border-right-width: 0;
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-time-header > .rbc-row:first-child {
+  border-bottom: 1px solid #7c7ad4 !important;
+}
+.rbc-time-header > .rbc-row.rbc-row-resource {
+  border-bottom: 1px solid #7c7ad4 !important;
+}
+.rbc-time-header-content {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-time-header-content {
+  border-right: 1px solid #7c7ad4 !important;
+}
+.rbc-time-content {
+  border-top: 2px solid #7c7ad4 !important;
+}
+.rbc-time-content > * + * > * {
+  border-left: 1px solid #7c7ad4 !important;
+}
+.rbc-rtl .rbc-time-content > * + * > * {
+  border-right: 1px solid #7c7ad4 !important;
+}
+
+/* ======== PAGINATION STYLES ======== */
+.paginationPages {
+  direction: rtl !important;
+}
+
+.pagination {
+  direction: ltr !important;
+  margin-top: 0px !important;
+}
+
+/* ======== TAB STYLES ======== */
+div.tabContainer div > ul.nav-pills {
+  border-radius: 4px 4px 0 0 !important;
+}
+
+div.tabContainer div > ul.nav-pills > li > a {
+  border-radius: 0 !important;
+}
+
+div.tabContainer div.tab-content {
+  color: #ecf3f7;
+  background-color: #ecf3f7 !important;
+  padding: 5px 15px !important;
+  margin-top: 6px !important;
+  margin-bottom: 25px !important;
+  -webkit-box-shadow: 0 16px 28px 0 rgba(62, 57, 107, 0.3) !important;
+  box-shadow: 0 16px 28px 0 rgba(62, 57, 107, 0.3) !important;
+}
+
+/* Inactive tab */
+div.tabContainer div > ul > li > a {
+  background-color: white !important;
+  border-radius: 1px !important;
+  color: black !important;
+  padding: 10px !important;
+}
+
+div.tabContainer div > ul > li > a:hover {
+  background-color: rgb(233, 232, 233) !important;
+}
+
+/* Active tab */
+div.tabContainer div > ul > li.active > a,
+div.tabContainer div > ul > li.active > a:hover,
+div.tabContainer div > ul > li.active > a:focus {
+  background-color: #ecf3f7 !important;
+  color: black !important;
+}
+
+.fa-exclamation-triangle {
+  color: rgb(235, 144, 60) !important;
+}
+
+/* ======== EMAIL STYLES ======== */
+/* Styles for React Tags*/
+.emailDistListCard {
+  box-shadow: 0 16px 28px 0 rgba(62, 57, 107, 0.3) !important;
+  margin-bottom: 45px;
+}
+
+div.ReactTags__tags {
+  position: relative !important;
+}
+
+.prevTagsDelBtn {
+  color: white;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.prevTagsDelBtn:hover {
+  color: #f8313c;
+}
+
+.prevTagsSpan {
+  height: 29px !important;
+  border: 1px solid #ddd !important;
+  color: white !important;
+  background: #6967ce !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  margin-bottom: 3px !important;
+}
+
+/* Styles for the input */
+div.ReactTags__tagInput {
+  border-radius: 2px !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+div.ReactTags__tagInput input.ReactTags__tagInputField,
+div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
+  height: 31px !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  width: 100% !important;
+  border: 1px solid #4340c2 !important;
+  padding: 0 4px !important;
+  margin-left: 10px !important;
+}
+
+/* ========== Styles for selected tags ========== */
+div.ReactTags__selected span.ReactTags__tag {
+  border: 1px solid #ddd !important;
+  color: white !important;
+  background: rgb(106, 196, 106) !important;
+  font-size: 12px !important;
+  display: inline-block !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  margin-bottom: 3px !important;
+}
+
+/* Remove Tags */
+div.ReactTags__selected a.ReactTags__remove {
+  color: white !important;
+  margin-left: 10px !important;
+  margin-right: 6px !important;
+  cursor: pointer !important;
+  font-size: 12px;
+}
+
+/* Remove Tags Hover */
+div.ReactTags__selected a.ReactTags__remove:hover {
+  color: #f8313c !important;
+  cursor: pointer !important;
+}
+
+/* Styles for suggestions */
+div.ReactTags__suggestions {
+  /* relative allowed viewing of full suggestions */
+  position: relative !important;
+  width: 254.66px !important;
+}
+
+div.ReactTags__suggestions ul {
+  list-style-type: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: 0.05em 0.01em 0.5em rgba(0, 0, 0, 0.2) !important;
+  background: white !important;
+}
+
+div.ReactTags__suggestions li {
+  border-bottom: 1px solid #ddd !important;
+  padding: 5px 10px !important;
+  margin: 0 !important;
+  width: 254.66px !important;
+}
+
+div.ReactTags__suggestions li mark {
+  text-decoration: underline !important;
+  background: none !important;
+  font-weight: 600 !important;
+}
+
+div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
+  background: #b7cfe0 !important;
+  cursor: pointer !important;
+  width: 254.66px !important;
+}
+
+/* Table Styles */
+.table-hover {
+  cursor: pointer;
+}
+
+/* Logged out cards */
+.logged-out-container {
+  flex: 0 0 400px;
+}
+
+.logged-out-card {
+  background-color: rgb(244, 245, 250);
+}
+
+/* Mobile View */
+@media screen and (max-width: 600px) {
+  /* Full screen cards */
+  html body .content .content-wrapper {
+    padding: 0;
+  }
+
+  .card {
+    border-radius: 0;
+  }
+
+  /* Logged out cards */
+  .logged-out-container {
+    height: 100%;
+    flex: 1 0 auto;
+  }
+
+  .logged-out-card {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    height: 100%;
+    flex: 1 0 auto;
+    justify-content: center;
+  }
+
+  /* Tables */
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+  }
+
+  .paginationPages {
+    direction: ltr !important;
+  }
+
+  .heading-elements {
+    position: relative !important;
+    right: 0px !important;
+  }
+}
+
+/* Search bar */
+.no-border-search {
+  border: none;
+}
+
+.no-border-search:focus {
+  outline: 0 none;
+}
+
+/* Type Ahead */
+.rbt-input-hint {
+  padding: 4px 16.8px !important;
+}
+
+/* Collapse Animation */
+.search-transition-show {
+  max-height: 500px;
+  -webkit-transition: max-height 0.3s ease-in;
+  -moz-transition: max-height 0.3s ease-in;
+  -o-transition: max-height 0.3s ease-in;
+  transition: max-height 0.3s ease-in;
+}
+
+.search-transition-hide {
+  max-height: 0;
+  -webkit-transition: max-height 0.15s ease-out;
+  -moz-transition: max-height 0.15s ease-out;
+  -o-transition: max-height 0.15s ease-out;
+  transition: max-height 0.15s ease-out;
+  overflow: hidden;
+}
+
+.media-list div.media {
+  color: #6b6f80 !important;
+}
+
+/* Header nav bar */
+.navbar-semi-dark {
+  background-color: #262d47 !important;
+}
+
+.navbar-semi-dark .navbar-nav > li {
+  line-height: 2.9;
+}
+
+/* Roles Privilege List */
+.list-group-item {
+  padding: 0.5rem 1.25rem;
+}
+
+/* React-tagsinput */
+.react-tagsinput {
+  border-radius: 0.25rem;
+  border-color: #cacfe7 !important;
+}
+
+.react-tagsinput--focused {
+  border-color: #6967ce !important;
+}
+
+.react-tagsinput-input {
+  font-size: 1rem !important;
+  font-family: inherit !important;
+  color: #3b4781 !important;
+  width: 100px !important;
+}
+
+.react-tagsinput-input::placeholder {
+  color: #d1d4f8 !important;
+}
+
+.react-tagsinput-tag {
+  border-radius: 0.25rem !important;
+  background-color: #6967ce !important;
+  border: 1px solid #383fd8 !important;
+  color: white !important;
+  font-family: inherit !important;
+}
