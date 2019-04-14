@@ -1,19 +1,82 @@
-@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+@import "https://fonts.googleapis.com/css?family=Reem+Kufi";
 
 body {
   background: #fff;
 }
 
-
 @keyframes wave {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.audio__controls {
+  height: 6.5rem !important;
+  position: absolute !important;
+  z-index: 999999 !important;
+  opacity: 100 !important;
+}
+
+.audio__player {
+  opacity: 100 !important;
+  z-index: 999999 !important;
+  position: absolute !important;
+}
+/* 
+/* 
+.play {
+  width: 2rem !important;
+  height: 2rem !important;
+} */
+
+.backward {
+  opacity: 0 !important;
+}
+
+.forward {
+  opacity: 0 !important;
+}
+
+.repeat {
+  opacity: 0 !important;
+}
+
+.sync {
+  opacity: 0 !important;
+}
+
+.random {
+  opacity: 0 !important;
+}
+
+/* .Demo {
+  height: 0 !important;
+  opacity: 0 !important;
+} */
+
+.Demo__load-btn {
+  height: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  z-index: 9999999999 !important;
+}
+
+.music-card-container {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80%;
+  width: 100vw;
+  margin-top: -65px;
 }
 
 .music-card {
   margin: 100px auto;
   background: #fff;
-  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   overflow: hidden;
   position: relative;
   width: 300px;
@@ -22,8 +85,9 @@ body {
 }
 
 .image {
-  background: url('http://static1.squarespace.com/static/530b728de4b04fc9b23a5988/t/569880381a5203aa7d44c1a8/1452834873397/00.jpg?format=1000w') no-repeat 75%;
-  background-size: cover;  
+  background: url("http://static1.squarespace.com/static/530b728de4b04fc9b23a5988/t/569880381a5203aa7d44c1a8/1452834873397/00.jpg?format=1000w")
+    no-repeat 75%;
+  background-size: cover;
   position: absolute;
   z-index: 1;
   opacity: 0.3;
@@ -33,7 +97,7 @@ body {
 
 .image:after {
   height: 100px;
-  content: '';
+  content: "";
   top: 200px;
   position: absolute;
   width: 100%;
@@ -98,14 +162,14 @@ body {
   color: #333;
   margin-bottom: 8px;
   text-transform: uppercase;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: "Reem Kufi", sans-serif;
 }
 
 .artist {
   color: #cfcfcf;
   font-size: 1.2em;
   letter-spacing: 0.08em;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: "Reem Kufi", sans-serif;
   margin-top: -10px;
 }
 
