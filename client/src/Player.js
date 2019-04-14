@@ -6,7 +6,7 @@ const $ = window.jQuery;
 
 class Player extends React.Component {
   state = {
-    isStreaming: false,
+    isStreaming: true,
     currentSong: "",
     currentPlayList: {}
   };
