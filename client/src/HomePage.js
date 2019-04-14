@@ -4,12 +4,25 @@ import { Link } from "react-router-dom";
 class HomePage extends React.Component {
   state = {
     email: "",
-    emailError: "",
-    password: "",
-    passwordError: "",
-    logInSuccess: false,
-    disabled: false,
-    validationHasRun: false
+    password: ""
+  };
+
+  buttonClicked = e => {
+    e.preventDefault();
+    this.logIn();
+  };
+
+  keyHandler = keyCode => {
+    if (keyCode === 13) {
+      this.logIn();
+    }
+  };
+
+  logIn = () => {
+    this.props.history.push({
+      pathname: "/dashboard",
+      state: { userId: this.state.email }
+    });
   };
 
   render() {
@@ -35,29 +48,15 @@ class HomePage extends React.Component {
                     name="email"
                     value={this.state.email}
                     className="form-control round"
-                    disabled={this.state.disabled ? "disabled" : ""}
-                    required
-                    aria-invalid="false"
                     onChange={e => {
                       this.setState({
-                        email: e.target.value,
-                        emailError: ""
+                        email: e.target.value
                       });
                     }}
                   />
                   <div className="form-control-position">
                     <i className="ft-user" />
                   </div>
-                  {this.state.emailError && (
-                    <label
-                      id="email-error"
-                      className="error"
-                      htmlFor="email"
-                      style={{ display: "inline-block" }}
-                    >
-                      {this.state.emailError}
-                    </label>
-                  )}
                 </fieldset>
                 <fieldset className="form-group position-relative has-icon-left validate">
                   <input
@@ -67,29 +66,15 @@ class HomePage extends React.Component {
                     value={this.state.password}
                     className="form-control round"
                     onKeyDown={e => this.keyHandler(e.keyCode)}
-                    disabled={this.state.disabled ? "disabled" : ""}
-                    required
-                    aria-invalid="false"
                     onChange={e => {
                       this.setState({
-                        password: e.target.value,
-                        passwordError: ""
+                        password: e.target.value
                       });
                     }}
                   />
                   <div className="form-control-position">
                     <i className="ft-lock" />
                   </div>
-                  {this.state.passwordError && (
-                    <label
-                      id="password-error"
-                      className="error"
-                      htmlFor="password"
-                      style={{ display: "inline-block" }}
-                    >
-                      {this.state.passwordError}
-                    </label>
-                  )}
                 </fieldset>
                 <div className="form-group row">
                   <div className="col-md-6 col-12 text-center text-sm-left" />
@@ -102,10 +87,11 @@ class HomePage extends React.Component {
                   <button
                     type="button"
                     onClick={this.buttonClicked}
-                    id="loginBtn"
                     className="btn round btn-block btn-glow btn-bg-gradient-x-purple-blue col-12 mr-1 mb-1"
                   >
-                    <strong>LOGIN</strong>
+                    <strong>
+                      <Link to="/dashboard">LOGIN</Link>
+                    </strong>
                   </button>
                 </div>
               </form>
