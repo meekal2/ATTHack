@@ -9,9 +9,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Route path="/" component={HomePage} />
-        <Route path="/dashboard" component={Dashboard} />
-        <Route path="/player" component={Player} />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/player" component={Player} />
         <Route exact path="/stream" component={StreamList} />
       </React.Fragment>
     );

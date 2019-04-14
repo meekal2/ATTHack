@@ -16,6 +16,9 @@ class StreamList extends React.Component {
     moodMode: false,
     stationMode: true
   };
+  toPlayer = () => {
+    this.props.history.push("/player");
+  };
 
   render() {
     return (
@@ -52,6 +55,50 @@ class StreamList extends React.Component {
               >
                 Moods
               </button>
+              <br />
+              <div className="buttonMargCenter">
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+                <br />
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+                <br />
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+                <br />
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+                <br />
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+                <br />
+                <button
+                  className="btn btn-primary buttonMarg"
+                  onClick={() => this.toPlayer()}
+                >
+                  mood 1
+                </button>
+              </div>
             </React.Fragment>
           )
         )}

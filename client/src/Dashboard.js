@@ -4,7 +4,8 @@ import StreamList from "./StreamList";
 
 class Dashboard extends React.Component {
   render() {
-    return this.props.userId === 1 ? <DJDashboard /> : <StreamList />;
+    // return this.props.userId === 1 ? <DJDashboard /> : <StreamList />;
+    return <StreamList />;
   }
 }
 

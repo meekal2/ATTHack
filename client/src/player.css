@@ -1,0 +1,12 @@
+.player {
+  background-color: blue;
+}
+
+.override {
+  height: 100vh !important;
+}
+
+.background {
+  background-color: blue;
+  z-index: 999999;
+}
