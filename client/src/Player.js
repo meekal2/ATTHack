@@ -16,15 +16,31 @@ class Player extends React.Component {
     var dJHubProxy = $.connection.dJHub;
     $.connection.hub.url = `${process.env.REACT_APP_SIGNALR_URL}`;
     dJHubProxy.client.sendSongOne = function(one, url) {
-      console.log(one, url);
-      if (one === 1) {
-        this.setState({ isStreaming: true });
+      if (one >= 1) {
+        this.loadPlayList(url);
       }
     }.bind(this);
 
     $.connection.hub.start().done(function() {
       console.log("Connected!");
     });
+  };
+
+  loadPlayList = url => {
+    var currentPlayList = {
+      playlistCoverUrl: "path/to/coverUrl",
+      playlistName: "playlist name",
+      bandName: "J. Cole",
+      songs: [
+        {
+          position: "1",
+          songName: "Middle Child",
+          songUrl: url
+        }
+      ],
+      type: "album"
+    };
+    this.setState({ currentPlayList: currentPlayList, isStreaming: true });
   };
 
   render() {

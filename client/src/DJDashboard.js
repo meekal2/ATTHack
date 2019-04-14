@@ -5,7 +5,8 @@ var formData = new FormData();
 
 class DJDashboard extends React.Component {
   state = {
-    documents: []
+    songs: [],
+    live: false
   };
 
   componentDidMount = () => {
@@ -22,34 +23,67 @@ class DJDashboard extends React.Component {
 
   handleDocumentUpload = files => {
     const chosenCaseData = new FormData();
-    let newDocuments = [];
+    let newSongs = this.state.songs;
     for (let key in files) {
       if (!isNaN(key)) {
         chosenCaseData.append("document", files[key].name);
       }
     }
     for (let pair of chosenCaseData.entries()) {
-      newDocuments.push({
+      newSongs.push({
         fileName: pair[1]
       });
     }
-    this.setState({ documents: newDocuments });
+    this.setState({ songs: newSongs, live: true });
 
-    for (let j = 0; j < files.length; j++) {
-      formData.append("document", files[j], "99?" + files[j].name);
-    }
-
-    this.handleStreamStart();
+    this.handleStreamStart(1);
   };
 
-  handleStreamStart() {
-    $.connection.dJHub.server.songOne(
-      1,
-      "https://s3-us-west-1.amazonaws.com/djapp-files/01.+Jonas+Brothers+-+Sucker.mp3"
-    );
+  handleStreamStart(track) {
+    if (track === 1) {
+      $.connection.dJHub.server.songOne(
+        1,
+        "https://s3-us-west-1.amazonaws.com/djapp-files/01.+Jonas+Brothers+-+Sucker.mp3"
+      );
+    }
+
+    if (track === 2) {
+      $.connection.dJHub.server.songOne(
+        2,
+        "https://s3-us-west-1.amazonaws.com/djapp-files/02.+Ariana+Grande+-+7+rings.mp3"
+      );
+    }
+
+    if (track === 3) {
+      $.connection.dJHub.server.songOne(
+        3,
+        "https://s3-us-west-1.amazonaws.com/djapp-files/03.+Bruno+Mars%2C+Cardi+B+-+Please+Me.mp3"
+      );
+    }
   }
 
+  songList = i => {
+    return (
+      <li key={i}>
+        {this.state.songs[i].fileName}{" "}
+        <button
+          className="btn bg-cyan bg-lighten-3 box-shadow-4"
+          onClick={this.handleStreamStart(i)}
+        >
+          <i className="ft-play" />
+        </button>
+      </li>
+    );
+  };
+
   render() {
+    const displaySongs = [];
+    if (this.state.songs) {
+      for (let i = 0; i < this.state.songs.length; i++) {
+        displaySongs.push(this.songList(i));
+      }
+    }
+
     return (
       <div className=" djcontainer">
         <div
@@ -57,10 +91,15 @@ class DJDashboard extends React.Component {
           align="center"
           style={{ backgroundColor: "black" }}
         >
+          {this.state.live === true && (
+            <div className="liveNow-container">
+              <div className="inner" />
+            </div>
+          )}
           <div className="col-12">
             <div className="file-input-wrapper">
               <label className="btn btn-warning" htmlFor="outerFileUpload">
-                Select File to Stream
+                {this.state.live ? "Select next file" : "Select File to Stream"}
               </label>
               <input
                 id="outerFileUpload"
@@ -78,7 +117,10 @@ class DJDashboard extends React.Component {
           className="row justify-content-center align-items-center playlist fullSizeBlackImage"
           align="center"
         >
-          <div className="col-12">hello</div>
+          <div className="col-12">
+            {/* <pre>{JSON.stringify(this.state, null, 3)}</pre> */}
+            <ul>{displaySongs}</ul>
+          </div>
         </div>
       </div>
     );
