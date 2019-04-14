@@ -541,3 +541,25 @@ div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
   color: white !important;
   font-family: inherit !important;
 }
+
+.djcontainer {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  height: 100vh;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.upload {
+  grid-row: 1;
+  height: 100%;
+  width: 100%; 
+  width: 100vw;
+}
+
+.playlist {
+  grid-row: 2;
+  height: 100%;
+  width: 100%; 
+  width: 100vw;
+}
