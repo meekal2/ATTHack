@@ -23,9 +23,17 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
   }
 
   .fullSizeBlackImage { 
-	height: 100vh !important;
 	margin-left: 0px !important;
 	background: url(../../app-assets/images/backgrounds/black.jpg) no-repeat center center fixed !important; 
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	margin-right: 0px !important;
+  }
+
+  .fullSizeNoImage { 
+	margin-left: 0px !important;
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;

@@ -49,20 +49,22 @@ class Player extends React.Component {
                   onToggle={({ audioPlaying }) => console.log({ audioPlaying })}
                 />
               </div>
-              <div class="music-card playing">
-                <div class="image" />
+              <div className="music-card-container">
+                <div className="music-card playing">
+                  <div className="image" />
 
-                <div class="wave" />
-                <div class="wave" />
-                <div class="wave" />
+                  <div className="wave" />
+                  <div className="wave" />
+                  <div className="wave" />
 
-                <div class="info">
-                  <h2 class="title">Anomaly</h2>
-                  <div class="artist">Lecrae</div>
+                  <div className="info">
+                    <h2 className="title">Anomaly</h2>
+                    <div className="artist">Lecrae</div>
+                  </div>
                 </div>
 
-                <i class="fa fa-pause trigger" aria-hidden="true" />
-                <i class="fa fa-play trigger" aria-hidden="true" />
+                <i className="fa fa-pause trigger" aria-hidden="true" />
+                <i className="fa fa-play trigger" aria-hidden="true" />
               </div>
             </React.Fragment>
           ) : (
