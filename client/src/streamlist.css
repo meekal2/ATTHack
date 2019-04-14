@@ -1,0 +1,13 @@
+.buttonMarg {
+  margin: 20px;
+  cursor: pointer;
+}
+
+.buttonMargCenter {
+  text-align: center;
+}
+
+.thumbnail {
+  width: 75px;
+  height: 75px;
+}

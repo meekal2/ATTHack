@@ -563,3 +563,29 @@ div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
   width: 100%; 
   width: 100vw;
 }
+
+/* .playercontainer {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  height: 100vh;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.music-card {
+  grid-row: 1;
+  height: 100%;
+  width: 100%; 
+  width: 100vw;
+}
+
+.playercontrols {
+  grid-row: 2;
+  height: 100%;
+  width: 100%; 
+  width: 100vw;
+} */
+
+.audio__player .audio__controls {
+  height: 6.5rem !important;
+}
