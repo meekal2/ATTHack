@@ -11,7 +11,7 @@ class DJDashboard extends React.Component {
   componentDidMount = () => {
     var dJHubProxy = $.connection.dJHub;
     console.log();
-    $.connection.hub.url = "http://localhost:3001/signalr";
+    $.connection.hub.url = `${process.env.REACT_APP_SIGNALR_URL}`;
     dJHubProxy.client.sendSongOne = function(one, url) {
       console.log(url);
     };
@@ -30,7 +30,7 @@ class DJDashboard extends React.Component {
     }
     for (let pair of chosenCaseData.entries()) {
       newDocuments.push({
-        fileName: pair[1],
+        fileName: pair[1]
       });
     }
     this.setState({ documents: newDocuments });
@@ -58,20 +58,20 @@ class DJDashboard extends React.Component {
           style={{ backgroundColor: "black" }}
         >
           <div className="col-12">
-          <div className="file-input-wrapper">
-            <label className="btn btn-warning" htmlFor="outerFileUpload">
-              Select File to Stream
-            </label>
-            <input
-              id="outerFileUpload"
-              className="fileUploadBtn"
-              type="file"
-              onChange={e => {
-                this.handleDocumentUpload(e.target.files);
-              }}
-              multiple
-            />
-          </div>
+            <div className="file-input-wrapper">
+              <label className="btn btn-warning" htmlFor="outerFileUpload">
+                Select File to Stream
+              </label>
+              <input
+                id="outerFileUpload"
+                className="fileUploadBtn"
+                type="file"
+                onChange={e => {
+                  this.handleDocumentUpload(e.target.files);
+                }}
+                multiple
+              />
+            </div>
           </div>
         </div>
         <div

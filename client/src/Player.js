@@ -12,21 +12,15 @@ class Player extends React.Component {
   };
 
   componentDidMount = () => {
+    var isStreaming;
     var dJHubProxy = $.connection.dJHub;
-    $.connection.hub.url = "http://localhost:3001/signalr";
+    $.connection.hub.url = `${process.env.REACT_APP_SIGNALR_URL}`;
     dJHubProxy.client.sendSongOne = function(one, url) {
-      this.setState({
-        isStreaming: true,
-        currentSong: one,
-        currentPlayList: {
-          songs: [
-            {
-              songUrl: url
-            }
-          ]
-        }
-      });
-    };
+      console.log(one, url);
+      if (one === 1) {
+        this.setState({ isStreaming: true });
+      }
+    }.bind(this);
 
     $.connection.hub.start().done(function() {
       console.log("Connected!");

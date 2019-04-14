@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Owin;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,13 @@ namespace ATTHack
     {
         public void Configuration(IAppBuilder app)
         {
-            
-            var hubConfiguration = new HubConfiguration();
-            hubConfiguration.EnableDetailedErrors = true;
-            app.MapSignalR(hubConfiguration);
+
+            app.Map("/signalr", map =>
+            {
+                map.UseCors(CorsOptions.AllowAll);
+                var hubConfiguration = new HubConfiguration { };
+                map.RunSignalR(hubConfiguration);
+            });
         }
     }
 }
