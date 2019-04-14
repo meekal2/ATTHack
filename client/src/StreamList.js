@@ -7,7 +7,8 @@ class StreamList extends React.Component {
     moodMode: false,
     stationMode: true
   };
-  toPlayer = () => {
+  toPlayer = e => {
+    e.preventDefault();
     this.props.history.push("/player");
   };
 
@@ -33,11 +34,11 @@ class StreamList extends React.Component {
                         <div className="row">
                           <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div className="embed-responsive embed-responsive-item embed-responsive-16by9">
-                              <iframe
+                              <button
                                 className="img-thumbnail"
-                                src="https://player.vimeo.com/video/268527451?title=0&byline=0"
                                 width="640"
                                 height="360"
+                                onClick={e => this.toPlayer(e)}
                               />
                             </div>
                           </div>

@@ -9,15 +9,15 @@ import Test from "./test";
 class App extends Component {
   render() {
     return (
-        <React.Fragment>
-          <div className="App">
+      <React.Fragment>
+        <div className="App">
           <Route exact path="/" component={HomePage} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/player" component={Player} />
           <Route exact path="/wstest" component={Test} />
           <Route exact path="/stream" component={StreamList} />
-          </div>
-        </React.Fragment>
+        </div>
+      </React.Fragment>
     );
   }
 }

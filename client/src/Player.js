@@ -12,6 +12,7 @@ class Player extends React.Component {
   };
 
   componentDidMount = () => {
+    var isStreaming;
     var dJHubProxy = $.connection.dJHub;
     $.connection.hub.url = `${process.env.REACT_APP_SIGNALR_URL}`;
     dJHubProxy.client.sendSongOne = function(one, url) {

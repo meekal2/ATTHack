@@ -12,7 +12,7 @@ class DJDashboard extends React.Component {
   componentDidMount = () => {
     var dJHubProxy = $.connection.dJHub;
     console.log();
-    $.connection.hub.url = "http://localhost:3001/signalr";
+    $.connection.hub.url = `${process.env.REACT_APP_SIGNALR_URL}`;
     dJHubProxy.client.sendSongOne = function(one, url) {
       console.log(url);
     };
