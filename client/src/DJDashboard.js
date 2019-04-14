@@ -1,66 +1,62 @@
 import React from "react";
 
+var formData = new FormData();
+
 class DJDashboard extends React.Component {
+  state = {
+    documents: []
+  };
+
+  handleDocumentUpload = files => {
+    const chosenCaseData = new FormData();
+    let newDocuments = [];
+    for (let key in files) {
+      if (!isNaN(key)) {
+        chosenCaseData.append("document", files[key].name);
+      }
+    }
+    for (let pair of chosenCaseData.entries()) {
+      newDocuments.push({
+        fileName: pair[1],
+      });
+    }
+    this.setState({ documents: newDocuments });
+
+    for (let j = 0; j < files.length; j++) {
+      formData.append("document", files[j], "99?" + files[j].name);
+    }
+  };
+
   render() {
     return (
-      <div className="content-wrapper fullSizeBlackImage">
-        <div className="content-body">
-          <div className="row">
-            <div className="col-12">
-              <div className="card">
-                <div className="card-body card-dashboard">
-                  <h5 className="card-header">DJ Dashboard</h5>
-                  <div className="row">
-                    <div className="col-xl-4 col-lg-6 col-md-12">
-                      <div className="card">
-                        <div className="card-header ">
-                          <a className="heading-elements-toggle">
-                            <i className="ft-upload btn-file-input" />
-                          </a>
-                          <div className="heading-elements">
-                            <ul className="list-inline mb-0">
-                              <li>
-                                <a data-action="reload">
-                                  <i className="ft-rotate-cw" />
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div className="card-content">
-                          <div className="card-body text-center">
-                            <div className="card-header pt-0 pb-0">
-                              <p className="info darken-2">Total Projects</p>
-                              <h3 className="display-4 blue-grey lighten-1">
-                                3,527
-                              </h3>
-                            </div>
-                            <div className="card-content">
-                              <div
-                                id="new-projects"
-                                className="height-150 newProjectsdonutShadow"
-                              />
-                              <ul className="list-inline clearfix mt-2">
-                                <li>
-                                  <h1 className="blue-grey lighten-1 text-bold-400">
-                                    526
-                                  </h1>
-                                  <span className="info darken-2">
-                                    <i className="ft-upload btn-file-input" />{" "}
-                                    Average New Projects
-                                  </span>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div className=" djcontainer">
+        <div
+          className="row justify-content-center align-items-center upload fullSizeNoImage"
+          align="center"
+          style={{ backgroundColor: "black" }}
+        >
+          <div className="col-12">
+          <div className="file-input-wrapper">
+            <label className="btn btn-warning" htmlFor="outerFileUpload">
+              Select File to Stream
+            </label>
+            <input
+              id="outerFileUpload"
+              className="fileUploadBtn"
+              type="file"
+              onChange={e => {
+                this.handleDocumentUpload(e.target.files);
+              }}
+              multiple
+            />
           </div>
+          </div>
+        </div>
+        <div
+          className="row justify-content-center align-items-center playlist fullSizeBlackImage"
+          align="center"
+        >
+          <div className="col-12">hello</div>
         </div>
       </div>
     );
