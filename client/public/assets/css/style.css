@@ -564,28 +564,32 @@ div.ReactTags__suggestions ul li.ReactTags__activeSuggestion {
   width: 100vw;
 }
 
-/* .playercontainer {
-  display: grid;
-  grid-template-rows: 40% 60%;
-  height: 100vh;
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.music-card {
-  grid-row: 1;
-  height: 100%;
-  width: 100%; 
-  width: 100vw;
-}
-
-.playercontrols {
-  grid-row: 2;
-  height: 100%;
-  width: 100%; 
-  width: 100vw;
-} */
-
 .audio__player .audio__controls {
   height: 6.5rem !important;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 8px #08461086, inset 0 0 8px #439110;
+  }
+  50% {
+    box-shadow: 0 0 16px #14df1e, inset 0 0 14px #398a20;
+  }
+  100% {
+    box-shadow: 0 0 8px #4a8a2091, inset 0 0 8px #052201fb;
+  }
+}
+.liveNow-container {
+  margin-left: auto;
+  margin-right: 20px;
+}
+.inner {
+  /* grid-row: 1; */
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  box-shadow: 0 0 8px #2a9e34, inset 0 0 8px #3fb43b;
+  -webkit-animation: pulse 2s linear 1s infinite;
+  float: right;
 }
