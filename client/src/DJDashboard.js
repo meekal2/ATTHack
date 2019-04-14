@@ -1,10 +1,23 @@
 import React from "react";
 
+const $ = window.jQuery;
 var formData = new FormData();
 
 class DJDashboard extends React.Component {
   state = {
     documents: []
+  };
+
+  componentDidMount = () => {
+    var dJHubProxy = $.connection.dJHub;
+    console.log();
+    $.connection.hub.url = "http://localhost:3001/signalr";
+    dJHubProxy.client.sendSongOne = function(one, url) {
+      console.log(url);
+    };
+    $.connection.hub.start().done(function() {
+      console.log("Connected!");
+    });
   };
 
   handleDocumentUpload = files => {
@@ -25,7 +38,16 @@ class DJDashboard extends React.Component {
     for (let j = 0; j < files.length; j++) {
       formData.append("document", files[j], "99?" + files[j].name);
     }
+
+    this.handleStreamStart();
   };
+
+  handleStreamStart() {
+    $.connection.dJHub.server.songOne(
+      1,
+      "https://s3-us-west-1.amazonaws.com/djapp-files/01.+Jonas+Brothers+-+Sucker.mp3"
+    );
+  }
 
   render() {
     return (
